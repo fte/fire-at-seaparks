@@ -1,5 +1,5 @@
-# Ignorer le dossier de compilation
-target/
+# Ignorer le contenu du dossier de compilation
+target/*
 
 # Ignorer les fichiers de l'éditeur et de l'IDE
 **/*.rs.bk
