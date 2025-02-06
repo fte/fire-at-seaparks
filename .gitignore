@@ -1,5 +1,7 @@
 # Ignorer le contenu du dossier de compilation
 target/*
+!target/.gitkeep
+
 
 # Ignorer les fichiers de l'éditeur et de l'IDE
 **/*.rs.bk
