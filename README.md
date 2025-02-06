@@ -25,7 +25,7 @@ This project simulates a fire effect in the terminal using Rust. The fire effect
 
 ## Screenshot
 
-![Fire Simulation](img/Screenshot 2025-02-06 at 15.43.12.png)
+![Fire Simulation](img/fasp-screenshot.png)
 
 ## Code Explanation
 
