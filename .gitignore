@@ -1,0 +1,27 @@
+# Ignorer le dossier de compilation
+target/
+
+# Ignorer les fichiers de l'éditeur et de l'IDE
+**/*.rs.bk
+*.swp
+*.swo
+*.idea/
+*.vscode/
+*.DS_Store
+
+# Fichiers de Cargo
+Cargo.lock
+.cargo/
+.cargo-lock
+
+# Ignorer les fichiers de débogage et de profiling
+*.dSYM/
+*.profraw
+*.profdata
+
+# Ignorer les artefacts de test
+tests/**/target/
+benches/**/target/
+
+# Caches et logs
+*.log
