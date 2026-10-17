@@ -4,8 +4,8 @@ use std::{thread::sleep, time::Duration, io::{Write, stdout}};
 
 const WIDTH: usize = 80;
 const HEIGHT: usize = 30;
-const COOLING: u8 = 5;  // Plus grand = extinction plus rapide
-const SPREAD: usize = 3; // Plus grand = plus de diffusion
+const COOLING: u8 = 7;  // Plus grand = extinction plus rapide
+const SPREAD: usize = 4; // Plus grand = plus de diffusion
 
 fn main() {
     let mut rng = rand::thread_rng();
@@ -38,16 +38,17 @@ fn main() {
             for x in 0..WIDTH {
                 let intensity = fire_pixels[y][x];
                 let color = match intensity {
-                    220..=255 => "\x1B[38;2;255;50;0m█",  // Rouge vif
-                    180..=219 => "\x1B[38;2;255;128;0m█", // Orange intense
-                    140..=179 => "\x1B[38;2;255;180;50m█", // Jaune orangé
-                    100..=139 => "\x1B[38;2;200;200;50m█", // Jaune pâle
-                    60..=99   => "\x1B[38;2;120;120;30m█", // Brun chaud
-                    20..=59   => "\x1B[38;2;60;30;10m█",  // Cendre foncée
+                    220..=255 => "\x1B[38;2;255;40;0m█",  // Rouge vif
+                    180..=219 => "\x1B[38;2;255;90;0m█",  // Orange intense
+                    140..=179 => "\x1B[38;2;255;140;0m█", // Orange
+                    100..=139 => "\x1B[38;2;255;185;20m█", // Jaune orangé
+                    60..=99   => "\x1B[38;2;200;70;0m█",  // Rouge sombre
+                    20..=59   => "\x1B[38;2;110;25;0m█",  // Braise sombre
                     _         => " ",  // Absence de feu
                 };
                 print!("{}", color);
             }
+            print!("\x1B[0m");
             println!();
         }
         stdout().flush().unwrap();
